@@ -62,3 +62,8 @@ datatable(db, filter = 'top', rownames = FALSE, options = list(pageLength = 20, 
 ```
 
 #### bibliography
+```{r}
+bib <- read_xlsx("bibliography.xlsx")
+datatable(bib, filter = 'top', rownames = FALSE, options = list(pageLength = 20, dom = 'tip'), escape = FALSE)
+```
+
