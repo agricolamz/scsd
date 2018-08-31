@@ -45,11 +45,11 @@ map.feature(df$language,
 map.feature(df$language,
             latitude = df$lat,
             longitude = df$long,
-            features = df$n_loci,
+            features = df$n_sibilants,
             label = df$label,
             label.hide = TRUE,
             color = c("white", "red"),
-            title = "n_loci",
+            title = "number of sibilants",
             legend.position = "bottomright")
 ```
 
@@ -58,6 +58,7 @@ map.feature(df$language,
 ```{r}
 library(DT)
 db <- read_xlsx("sound_change.xlsx")
+db <- db[, -c(9:10)]
 datatable(db, filter = 'top', rownames = FALSE, options = list(pageLength = 20, dom = 'tip'), escape = FALSE)
 ```
 
