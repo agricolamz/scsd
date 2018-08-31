@@ -29,19 +29,17 @@ df %>%
                         language,
                         paste0(language, ", ", dialect))) ->
   df
+
 map.feature(df$language,
-            features = df$cons_s_ratio,
             latitude = df$lat,
             longitude = df$long,
+            features = df$n_consonants,
             label = df$label,
             label.hide = TRUE,
             color = c("white", "red"),
-            title = "sibilant/consonant <br> ratio",
+            title = "number of consonants",
             legend.position = "bottomright")
-```
 
-
-```{r}
 map.feature(df$language,
             latitude = df$lat,
             longitude = df$long,
@@ -50,6 +48,16 @@ map.feature(df$language,
             label.hide = TRUE,
             color = c("white", "red"),
             title = "number of sibilants",
+            legend.position = "bottomright")
+
+map.feature(df$language,
+            features = df$cons_s_ratio,
+            latitude = df$lat,
+            longitude = df$long,
+            label = df$label,
+            label.hide = TRUE,
+            color = c("white", "red"),
+            title = "sibilant/consonant <br> ratio",
             legend.position = "bottomright")
 ```
 
